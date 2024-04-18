@@ -1,0 +1,119 @@
+/* Styling the body to center content vertically and horizontally */
+body {
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 100vh;
+  /* Full viewport height */
+  margin: 0;
+  /* Remove default margin */
+  font-family: "Caveat", cursive;
+  /* Font choice */
+  background-color: #f4f4f4;
+  /* Background color */
+}
+
+/* Styling for the card container */
+.card {
+  width: 500px;
+  /* Set width */
+  height: 500px;
+  /* Set height */
+  perspective: 1000px;
+  /* Perspective for 3D effect */
+}
+
+/* Front and back faces of the card */
+.card-front,
+.card-back {
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  position: absolute;
+  /* Positioned absolutely within the card */
+  backface-visibility: hidden;
+  /* Hide back face during transitions */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* Shadow effect */
+  overflow: hidden;
+  /* Hide overflowing content */
+  padding: 20px;
+  /* Padding inside the card */
+  text-align: center;
+  /* Center text horizontally */
+}
+
+/* Styling for the front face of the card */
+.card-front {
+  background-color: #3498db;
+  /* Blue background color */
+  color: white;
+  /* Text color */
+  transform: rotateY(0deg);
+  /* Initial rotation */
+  transition: transform 0.5s ease;
+  /* Smooth transition */
+}
+
+/* Styling for the back face of the card */
+.card-back {
+  background-color: #e74c3c;
+  /* Red background color */
+  color: white;
+  /* Text color */
+  transform: rotateY(180deg);
+  /* Initial rotation for back face */
+  transition: transform 0.5s ease;
+  /* Smooth transition */
+}
+
+/* Styling for headings inside the card */
+.card h2 {
+  margin-top: 0;
+  /* Remove top margin */
+  font-size: 50px;
+  /* Larger font size */
+}
+
+/* Styling for paragraphs inside the card */
+.card p {
+  margin-bottom: 0;
+  /* Remove bottom margin */
+  font-size: 20px;
+  /* Medium font size */
+}
+
+/* Hover effect for flipping the card */
+.card:hover .card-front {
+  transform: rotateY(-180deg);
+  /* Flip the card to show back face */
+}
+
+/* Hover effect for flipping the card */
+.card:hover .card-back {
+  transform: rotateY(0deg);
+  /* Flip the card to show front face */
+}
+
+/* Styling for the container of multiple cards */
+.container {
+  display: flex;
+  /* Display as flex container */
+  justify-content: center;
+  /* Center content horizontally */
+  gap: 20px;
+  /* Gap between cards */
+  margin-top: 50px;
+  /* Margin from the top */
+}
+
+/* Styling for individual cards inside the container */
+.container .card {
+  margin: 0 10px;
+  /* Margin around each card */
+}
